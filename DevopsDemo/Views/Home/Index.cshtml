@@ -1,0 +1,35 @@
+﻿@model IList<PostViewModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<div class="row">
+    <h2>Post List</h2>
+
+    <table class="table">
+        <thead>
+        <th>Post Id</th>
+        <th> Title</th>
+        <th> Description</th>
+        <th> Author</th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m=>item.PostId)</td>
+                    <td>@Html.DisplayFor(m=>item.Title)</td>
+                    <td>@Html.DisplayFor(m=>item.Description)</td>
+                    <td>@Html.DisplayFor(m=>item.Author)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
